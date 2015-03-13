@@ -1,18 +1,16 @@
-import java.util.*;
+import java.util.LinkedList;
 
 // A classe Mergesort a ser completada
 class Mergesort {
 
     static void split(LinkedList<Integer> l, LinkedList<Integer> l1, LinkedList<Integer> l2) {
     	int size = l.size();
-    	//System.out.println(size/2);
     	if(size != 0) {
-    		System.out.println(l.get(0));
-	    	for (int i = 0; i <= size/2; i++) {
-	    		l1.push((Integer) l.get(i));
+	    	for (int i = 0; i < size/2; i++) {
+	    		l1.push(l.get(i));
 	    	}
-	    	for (int i = size/2 + 1; i < size; i++) {
-	    		l2.push((Integer) l.get(i));
+	    	for (int i = size/2; i < size; i++) {
+	    		l2.push(l.get(i));
 	    	}
     	}
     }
@@ -20,14 +18,46 @@ class Mergesort {
     static LinkedList<Integer> merge(LinkedList<Integer> l1,
                                      LinkedList<Integer> l2) {
     	LinkedList<Integer> l = new LinkedList<Integer>();
-    	l.addAll(l1);
-    	l.addAll(l2);
-    	Collections.sort(l);
+    	
+    	boolean isEmpty = false;
+    	while(!isEmpty) {
+    		
+    		if(l1.isEmpty()) {
+    			l.addAll(l2);
+    			isEmpty = true;
+    		} 
+    		else if(l2.isEmpty()) {
+    			l.addAll(l1);
+    			isEmpty = true;
+    		}
+    		else {
+	    		int n1 = l1.getFirst(), n2 = l2.getFirst();
+	    		if(n1 < n2) {
+	    			l.addLast(n1);
+	    			l1.removeFirst();
+	    		}
+	    		else {
+	    			l.addLast(n2);
+	    			l2.removeFirst();
+	    		}
+    		}
+    	}
         return l;
     }
 
     static LinkedList<Integer> mergesort(LinkedList<Integer> l) {
-        return null; // a ser completada
+    	
+    	if(l.size() > 1)
+    	{
+        	LinkedList<Integer> l1 = new LinkedList<Integer>(), l2 = new LinkedList<Integer>();
+        	
+        	Mergesort.split(l, l1, l2);
+        	//System.out.println("  split(l) = " + l1 + " / " + l2);
+        	
+        	l = Mergesort.merge(Mergesort.mergesort(l1), Mergesort.mergesort(l2));
+    	}
+ 	
+        return l; // a ser completada
     }
 }
 
