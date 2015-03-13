@@ -23,40 +23,7 @@ class Mergesort {
     	l.addAll(l1);
     	l.addAll(l2);
     	Collections.sort(l);
-    	/*if(!l1.isEmpty()) {
-    		l.push(l1.pollFirst());
-    		for (Iterator<Integer> iterator = l1.iterator(); iterator.hasNext();)
-    		{
-    		  Integer integer = (Integer) iterator.next();
-    		  for(int i = 0, hasAdd = 0; hasAdd == 0 && i < l.size(); i++){
-    			  if(l.get(i) > integer) {
-    				  l.add(i+1, integer);
-    				  hasAdd = 1;
-    			  } else if(i == l.size()-1) {
-    				  l.add(i+1, integer);
-    				  hasAdd = 1;
-    			  }
-    		  }
-    		}
-    	}
-    	if(!l2.isEmpty()){
-    		for (Iterator<Integer> iterator = l2.iterator(); iterator.hasNext();)
-    		{
-    		  Integer integer = (Integer) iterator.next();
-    		  for(int i = 0, hasAdd = 0; hasAdd == 0 && i < l.size(); i++){
-    			  if(l.get(i) > integer) {
-    				  l.add(i+1, integer);
-    				  hasAdd = 1;
-    			  } else if(i == l.size()-1) {
-    				  l.add(i+1, integer);
-    				  hasAdd = 1;
-    			  }
-    		  }
-    		}
-    	}*/
-    	
-    	
-        return l; // a ser completada
+        return l;
     }
 
     static LinkedList<Integer> mergesort(LinkedList<Integer> l) {
