@@ -19,7 +19,44 @@ class Mergesort {
 
     static LinkedList<Integer> merge(LinkedList<Integer> l1,
                                      LinkedList<Integer> l2) {
-        return null; // a ser completada
+    	LinkedList<Integer> l = new LinkedList<Integer>();
+    	l.addAll(l1);
+    	l.addAll(l2);
+    	Collections.sort(l);
+    	/*if(!l1.isEmpty()) {
+    		l.push(l1.pollFirst());
+    		for (Iterator<Integer> iterator = l1.iterator(); iterator.hasNext();)
+    		{
+    		  Integer integer = (Integer) iterator.next();
+    		  for(int i = 0, hasAdd = 0; hasAdd == 0 && i < l.size(); i++){
+    			  if(l.get(i) > integer) {
+    				  l.add(i+1, integer);
+    				  hasAdd = 1;
+    			  } else if(i == l.size()-1) {
+    				  l.add(i+1, integer);
+    				  hasAdd = 1;
+    			  }
+    		  }
+    		}
+    	}
+    	if(!l2.isEmpty()){
+    		for (Iterator<Integer> iterator = l2.iterator(); iterator.hasNext();)
+    		{
+    		  Integer integer = (Integer) iterator.next();
+    		  for(int i = 0, hasAdd = 0; hasAdd == 0 && i < l.size(); i++){
+    			  if(l.get(i) > integer) {
+    				  l.add(i+1, integer);
+    				  hasAdd = 1;
+    			  } else if(i == l.size()-1) {
+    				  l.add(i+1, integer);
+    				  hasAdd = 1;
+    			  }
+    		  }
+    		}
+    	}*/
+    	
+    	
+        return l; // a ser completada
     }
 
     static LinkedList<Integer> mergesort(LinkedList<Integer> l) {
@@ -27,7 +64,7 @@ class Mergesort {
     }
 }
 
-// A classe Ex1 é fornecida fournie, para testar o código de Mergesort
+// A classe Ex1 ï¿½ fornecida fournie, para testar o cï¿½digo de Mergesort
 public class Ex1 {
 
     static boolean is_sorted(LinkedList<Integer> l) {
@@ -40,7 +77,7 @@ public class Ex1 {
         return true;
     }
 
-    static final int M = 10; // os elementos estão entre 0..M-1
+    static final int M = 10; // os elementos estï¿½o entre 0..M-1
 
     static int[] occurrences(LinkedList<Integer> l) {
         int[] occ = new int[M];
