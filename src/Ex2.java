@@ -9,7 +9,23 @@ class DutchFlag {
     }
 
     static void dutch_flag(int[] a) {
-        // a ser completada
+    	int b = 0, i = b;
+    	int n = a.length - 1, r = n;
+    	while(i <= r) {
+    		if(a[i] == 0) {
+    			DutchFlag.swap(a, b, i);
+        		b++;
+        		i++;
+    		}
+    		else if(a[i] == 1) {
+        		i++;
+    		}
+    		else {
+    			DutchFlag.swap(a, i, r);
+    			r--;
+    		}
+		
+    	}
     }
 
 }
