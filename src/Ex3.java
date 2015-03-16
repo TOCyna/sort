@@ -32,11 +32,15 @@ class Quicksort {
     }
 
     static void quickrec(int[] a, int l, int r) {
-
+    	if(r - l >= 1) {
+    		int m = Quicksort.partition(a, l, r);
+    		Quicksort.quickrec(a, l, m-1);
+    		Quicksort.quickrec(a, m+1, r);
+    	}
     }
 
     static void quicksort(int[] a) {
-        // a ser completada
+        Quicksort.quickrec(a, 0, a.length-1);
     }
 
 }
