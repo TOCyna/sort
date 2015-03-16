@@ -24,7 +24,6 @@ class DutchFlag {
     			r--;
     			DutchFlag.swap(a, i, r);
     		}
-		
     	}
     }
 
